@@ -1,13 +1,15 @@
-import { expect } from 'chai'
-import { shallowMount } from '@vue/test-utils'
-import HelloWorld from '@/components/HelloWorld.vue'
+import { mount } from '@vue/test-utils'
+import Array from '@/components/Array.vue'
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message'
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg }
+describe('Array.vue', () => {
+  it('doesn\'t mutate array', async () => {
+    let array = [1]
+    const wrapper = mount(Array, {
+      propsData: { array }
     })
-    expect(wrapper.text()).to.include(msg)
+
+    await wrapper.vm.$nextTick()
+
+    console.log(wrapper.vm.array) // Should be [1, 2]
   })
 })
