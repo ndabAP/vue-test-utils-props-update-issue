@@ -1,24 +1,7 @@
 # vue-test-utils-props-update-issue
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. Run `npm i`
+2. `npm run serve`
+3. See `[1, 2]`
+4. `npm run test`
+5. See `[1]` instead of `[1, 2]`
