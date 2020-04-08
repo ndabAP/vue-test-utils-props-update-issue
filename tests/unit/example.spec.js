@@ -1,15 +1,13 @@
 import { mount } from '@vue/test-utils'
-import Array from '@/components/Array.vue'
+import ArrayWrapper from './ArrayWrapper'
+import Array from '@/components/Array'
 
-describe('Array.vue', () => {
+describe('ArrayWrapper.vue', () => {
   it('doesn\'t mutate array', async () => {
-    let array = [1]
-    const wrapper = mount(Array, {
-      propsData: { array }
-    })
+    const wrapper = mount(ArrayWrapper)
 
     await wrapper.vm.$nextTick()
 
-    console.log(wrapper.vm.array) // Should be [1, 2]
+    console.log(wrapper.find(Array).vm.array) // Should be [1, 2]
   })
 })
